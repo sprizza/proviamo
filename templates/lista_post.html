@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+        {% for object in object_list %}
+            <html style="background-color: #999999">
+
+            </html>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!----font google--->
+            <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+
+            <a href="{{object.get_absolute_url}}"><h1 class="animated infinite pulse" style="color: olivedrab"><strong style="text-decoration: underline ">{{object.titolo}}</strong></h1></a>
+            <h3 style="color: #4CAF50">{{ object.data }}</h3>
+            <p>{{ object.contenuto|safe|linebreaks|truncatewords_html:50 }}</p>
+
+        {% endfor %}
+<style>
+
+    .but:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    [type=reset], [type=submit], button, html [type=button] {
+        -webkit-appearance: button;
+    }
+    #btn-outline-indietro {
+        background-color: transparent;
+        background-image: none;
+        border-color: #28a745;
+    }
+    #btn-outline-avanti {
+        background-color: transparent;
+        background-image: none;
+        border-color: #28a745;
+    }
+    .but {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .bu {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    button, select {
+        text-transform: none;
+    }
+    button, input {
+        overflow: visible;
+    }
+    button, input, optgroup, select, textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    button {
+        border-radius: 0;
+    }
+
+
+    .but span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .but span:after {
+        content: '\00AB';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .but:hover span {
+        padding-right: 25px;
+    }
+
+    .but:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+
+    .bu span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .bu span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .bu:hover span {
+        padding-right: 25px;
+    }
+
+    .bu:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    body, html, h1, h2, h3, button {
+        font-family: 'Annie Use Your Telescope',serif;
+    }
+
+</style>
+
+
+{% if page_obj.has_previous %}
+<li><a href="?page={{ page_obj.previous_page_number }}"><button class="but animated infinite pulse" id="btn-outline-indietro"><span style="color: red">indietro</span></button></a><li></li>
+{% endif %}
+{% if page_obj.has_next %}
+<li><a href="?page={{ page_obj.next_page_number }}"><button class="bu animated infinite pulse" id="btn-outline-avanti"><span>avanti</span></button></a></li>
+{% endif %}
+
+
+{% endblock content %}

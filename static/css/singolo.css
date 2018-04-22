@@ -1,0 +1,18 @@
+body {
+    padding-top: auto;
+}
+
+
+footer {
+    min-width: 100%;
+    min-height: 400px;
+    background-position: center center;
+    padding: 90px;
+    background-color: transparent;
+
+}
+
+.element.style {
+    background-size: cover;
+}
+

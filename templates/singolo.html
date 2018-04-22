@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+{% load static %}
+{% block content %}
+{% load static %}
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../static/css/singolo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Opzioni tema -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 14px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #999999;
+            color: black;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .parallax {
+
+            min-height: 950px;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax2 {
+
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax3 {
+
+            height: 300px;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            font-weight: bolder;
+            font-family: Ubuntu Condensed, serif;
+            color: darkred
+        }
+        h6 {
+            font-family: Volkhov, serif;
+            font-size: 4.0em;
+            font-style: oblique;
+
+        }
+        u {
+            font-family: Volkhov, serif;
+            font-size: 2.0em;
+            font-style: oblique;
+
+        }
+        p {
+            font-family: Volkhov, serif;
+            font-size: 30px;
+            color: #f5dd5d;
+            font-style: oblique;
+
+
+        }
+
+        h2 {
+            font-family: Volkhov, serif;
+            color: #f5dd5d;
+            font-style: oblique;
+
+                }
+        h3 {
+            font-family: Volkhov, serif;
+            color: springgreen;
+            font-style: oblique;
+        }
+
+
+        u {
+            color: olive;
+        }
+
+        a {
+            color: black;
+        }
+
+        .pagina  {
+            min-height: 90%;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            min-height: 10%;
+        }
+
+
+        footer {
+            min-width: 100%;
+            min-height: 600px;
+            background-position: center center;
+            padding: 90px;
+            background-color: transparent;
+
+        }
+
+        html, body {
+            padding-top: 0;
+            min-height: 80px;
+            height: 45%;
+            background-color: #666666;
+        }
+        .gif {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            background-image: url(https://img-fotki.yandex.ru/get/3111/5091629.a2/0_85f54_7fb379e6_orig),
+            linear-gradient(45deg, #eee, transparent 60%),
+            linear-gradient(-45deg, #eee, transparent 40%);
+            background-repeat: no-repeat, repeat, repeat; /*----immagine non viene ripetuta, immagine ripetuta--*/
+            background-position:
+                    50% -15%,
+                    50% 50%,
+                    50% 50%;
+            background-blend-mode: difference;
+            /*  background-size: auto, 5em 5em, 5em  5em;*/
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #FFF;
+            animation: move 1.68s infinite ease-out;
+        }
+        @keyframes move {
+            50% {
+                background-position:
+                        50% 95%,
+                        50% 50%,
+                        50% 50%;
+            }
+        }
+
+
+        video {
+            width: 50%;
+        }
+
+        body {margin:0;height:2000px;}
+        #mySidenav a {
+            position: absolute;
+            left: -50px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 100px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #mySidenav a:hover {
+            padding: 18px;
+            left: 0;
+        }
+
+        .icon-bar {
+            position: fixed;
+            top: 30%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 25px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .inizio {
+            top: 30px;
+            background: #3B5998;
+            color: white;
+        }
+
+        .cuore {
+            top: 80px;
+            background: #55ACEE;
+            color: white;
+        }
+
+        .batti_mani {
+            top: 120px;
+            background: #dd4b39;
+            color: white;
+        }
+
+        .wiki {
+            top: 160px;
+            background: #007bb5;
+            color: white;
+        }
+
+        .sorriso {
+            top: 200px;
+            background: #f5dd5d;
+            color: white;
+        }
+        .p-gioco {
+            top: 240px;
+            background: #4CAF50;
+            color: white;
+        }
+        .fico {
+            top: 280px;
+            background: #333333;
+            color: white;
+        }
+
+        #googleMap {
+
+            height: 400px;
+
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(50%);
+        }
+        .buttonload {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 24px; /* Some padding */
+            font-size: 16px; /* Set a font-size */
+            font-family: Volkhov, serif;
+            font-style: oblique;
+        }
+        .fa {
+            margin-left: 0;
+            margin-right: 3px;
+        }
+
+
+
+
+
+        @keyframes hinge {
+            0% {
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+            }
+
+            20%,
+            60% {
+                transform: rotate3d(0, 0, 1, 80deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+            }
+
+            40%,
+            80% {
+                transform: rotate3d(0, 0, 1, 60deg);
+                transform-origin: top left;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+
+            to {
+                transform: translate3d(0, 700px, 0);
+                opacity: 0;
+            }
+        }
+
+        .hinge {
+            animation-duration: 20s;
+            animation-name: hinge;
+        }
+
+
+
+
+        .button {
+            padding: 0 10px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: black;
+            background-color: chocolate;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px black;
+            margin: 10px;
+        }
+
+        .button:hover {background-color: gold}
+
+        .button:active {
+            background-color: #f5dd5d;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        #im-bottone {
+            font-size: 48px;
+        }
+
+        #im-bottone2 {
+            font-size: 48px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+<div class="row">
+    <div class="parallax" style="background-image: url(https://source.unsplash.com/category/objects/)"></div>
+
+    <h1 style="padding-left: 100px; font-style: oblique"><u>{{ object.titolo }}</u></h1>
+    <h4 style="padding-left: 120px; font-style: oblique">{{ object.data }}</h4>
+    <h2 style="padding-left: 120px;padding-right:100px; text-align: center;
+     font-style: oblique ;font-family: Volkhov, serif;" >{{ object.contenuto|safe|linebreaks }}</h2>
+
+    <div id="mySidenav" class="icon-bar">
+
+        <li class="{% if request.path_info == '/'%} active{% endif %}"><a href="/" class="inizio"><i class="glyphicon glyphicon-home"></i></a></li>
+
+        <a href="http://www.anthroposmagazine.com/wp-content/uploads/sites/8/2014/04/bacio-della-morte1.jpg" class="cuore"><i class="fa fa-heartbeat" style="font-size:24px"></i></a>
+        <a href="http://capiscame.blog.tiscali.it/files/2005/01/11396edc48d.jpg" class="batti_mani"><i class="fa fa-sign-language" style="font-size:24px"></i></a>
+        <a href="https://it.wikipedia.org/wiki/Pagina_principale" class="wiki"><i class="fa fa-wikipedia-w" style="font-size:24px"></i></a>
+        <a href="https://sognienumeri.it/wp-content/uploads/2015/10/sognare-la-morte.jpg" class="sorriso"><i class="fa fa-smile-o" style="font-size:24px"></i></a>
+        <li class="{% if request.path_info == '/gioco/'%} active{% endif %}"><a href="/gioco" class="p-gioco"><i class="fa fa-gamepad" style="font-size:24px"></i></a></li>
+        <a href="#contatto" class="fico"><i class="fa fa-at" style="font-size:24px"></i></a>
+    </div>
+
+    <center>
+        <button type="button" class="button hinge" data-toggle="modal" data-target=".bs-example-modal-sm"><span id="im-bottone2" class="fa"></span></button>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <h4 style="color: darkblue;">Il mio primo sito...</h4>
+                    <h5 style="color: darkblue;">....se possiamo chiamarlo cosi :)</h5>
+                    <h6 style="color: darkblue;">Creato da me</h6>
+
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="button hinge" data-toggle="modal" data-target="#exampleModalCenter"><span id="im-bottone" class="fa"></span></button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered gif" role="document">
+            </div>
+        </div>
+
+</center>
+</div>
+
+<div class="parallax2" style="background-image: url(https://source.unsplash.com/category/random/)"></div>
+
+
+<div class="container pagina">
+
+
+
+</div>
+
+<footer>
+    <div id="contatto"></div>
+<button class="buttonload" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-spinner fa-spin"></i>Su</button>
+
+
+
+
+    <div class="parallax3" style="background-image: url(https://source.unsplash.com/category/erondu/)"></div>
+        <h1 class="text-center"><strong style="position: center">Contatti</strong></h1>
+    <p class="text-center"><em>Ciao, spero che la vita ti sorrida :)</em></p>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>Recapiti</p>
+
+            <p><span class="glyphicon glyphicon-map-marker"></span><a href="https://it.wikipedia.org/wiki/Nauru">: Repubblica di Nauru</a></p>
+
+            <p><span class="glyphicon glyphicon-phone"></span>: +674 ......</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>: non me la ricordo</p>
+        </div>
+    </div>
+    <div id="googleMap"></div>
+</footer>
+
+
+
+<!------------Mappa----------->
+<script>
+
+    function myMap() {
+        var myCenter = new google.maps.LatLng(-0.5284, 166.9342);
+        var mapProp = {center:myCenter, zoom:10, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
+        marker.setMap(map);
+        google.maps.event.addListener(marker,'click',function() {
+            var infowindow = new google.maps.InfoWindow({
+                content:"Abito qui :)"
+            });
+        infowindow.open(map,marker);
+        });
+    }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8CJemNdPN9tWeINltAVTqjcPzcW7g3zQ&callback=myMap"></script>
+
+
+<!CDN jQuery -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+<script>
+    function smile() {
+        var a;
+        a = document.getElementById("im-bottone");
+        a.innerHTML = "&#xf118;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf11a;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf118;";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf11a;";
+        }, 3000);
+    }
+    smile();
+    setInterval(smile, 4000);
+
+
+    function smile2() {
+        var a;
+        a = document.getElementById("im-bottone2");
+        a.innerHTML = "🙂";
+        setTimeout(function () {
+            a.innerHTML = "😊";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "😋";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "😛";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "🤓";
+        }, 4000);
+        setTimeout(function () {
+            a.innerHTML = "😎";
+        }, 5000);
+        setTimeout(function () {
+            a.innerHTML = "🤒";
+        }, 6000);
+        setTimeout(function () {
+            a.innerHTML = "😴";
+        }, 7000);
+    }
+    smile2();
+    setInterval(smile2, 8000);
+    </script>
+
+</body>
+</html>
+
+
+{% endblock content %}
+
+

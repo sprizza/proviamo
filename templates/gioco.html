@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+{% load static %}
+{% block content %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Opzioni tema -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+     <!----font google--->
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+    /* Set height to 100% for body and html to enable the background image to cover the whole page: */
+    body, html, h1 {
+        height: 100%;
+        font-family: 'Annie Use Your Telescope',serif;
+    }
+    body {
+        line-height: 1;
+    }
+    #im-bottone2 {
+
+        font-size: 900px;
+        background-position: center center;
+        background-size: cover;
+
+    }
+    .bgimg {
+
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+    }
+
+
+
+    /* Position text in the middle */
+    .middle {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /* Style the <hr> element */
+    hr {
+        margin: auto;
+        width: 50%;
+    }
+
+
+
+    #googleMap {
+
+        height: 400px;
+
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(50%);
+    }
+    .fa {
+        margin-left: 0;
+        margin-right: 3px;
+    }
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 14px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #999999;
+        color: black;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    footer {
+        min-width: 100%;
+        min-height: 600px;
+        background-position: center center;
+        padding: 90px;
+        background-color: transparent;
+
+    }
+    .button {
+        padding: 0 10px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: black;
+        background-color: chocolate;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px black;
+        margin: 10px;
+    }
+
+    .button:hover {background-color: gold}
+
+    .button:active {
+        background-color: #f5dd5d;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    #im-bottone, #im-bottone3{
+        font-size: 48px;
+    }
+
+
+
+    @keyframes hinge {
+        0% {
+            transform-origin: top left;
+            animation-timing-function: ease-in-out;
+        }
+
+        20%,
+        60% {
+            transform: rotate3d(0, 0, 1, 80deg);
+            transform-origin: top left;
+            animation-timing-function: ease-in-out;
+        }
+
+        40%,
+        80% {
+            transform: rotate3d(0, 0, 1, 60deg);
+            transform-origin: top left;
+            animation-timing-function: ease-in-out;
+            opacity: 1;
+        }
+
+        to {
+            transform: translate3d(0, 700px, 0);
+            opacity: 0;
+        }
+    }
+
+    .hinge {
+        animation-duration: 20s;
+        animation-name: hinge;
+    }
+
+    .gif {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        background-color: yellow;
+        background-image: url(https://img-fotki.yandex.ru/get/3111/5091629.a2/0_85f54_7fb379e6_orig),
+        linear-gradient(45deg, #eee, transparent 60%),
+        linear-gradient(-45deg, #eee, transparent 40%);
+        background-repeat: no-repeat, repeat, repeat; /*----immagine non viene ripetuta, immagine ripetuta--*/
+        background-position:
+                50% -15%,
+                50% 50%,
+                50% 50%;
+        background-blend-mode: difference;
+        /*  background-size: auto, 5em 5em, 5em  5em;*/
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px #FFF;
+        animation: move 1.68s infinite ease-out;
+    }
+    @keyframes move {
+        50% {
+            background-position:
+                    50% 95%,
+                    50% 50%,
+                    50% 50%;
+        }
+    }
+
+
+    video {
+        width: 50%;
+    }
+
+    li.btn-floating.btn-large {
+        width: 56px;
+        height: 56px;
+    }
+    .fixed-action-btn {
+        display: block;
+        top: 50%;
+        position: fixed;
+        left: 10px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .buttonload {
+        background-color: #4CAF50; /* Green background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 12px 24px; /* Some padding */
+        font-size: 16px; /* Set a font-size */
+        font-family: Volkhov, serif;
+        font-style: oblique;
+    }
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 4s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    @keyframes cambia-colore {
+        0% {background: #cc1111;}
+        5% {background: #8c795d;}
+        10% {background: #28a745;}
+        15% {background: brown;}
+        20% {background: lawngreen;}
+        25% {background: blueviolet;}
+        30% {background: deepskyblue;}
+        35% {background: palegreen;}
+        40% {background: yellowgreen;}
+        45% {background:orange;}
+        50% {background:red;}
+        75% {background: white;}
+        100% {background: #28a745;}
+    }
+    #animazione {
+        animation-name:cambia-colore;
+        animation-duration:15s;
+        animation-delay:4s;
+        animation-timing-function:ease-in-out;
+        animation-iteration-count:infinite;
+        -webkit-box-direction: revert;
+    }
+    /* meteo*/
+    TABLE.WFOT TD {vertical-align:top}
+
+    table {
+        width: 10%;
+    }
+    td, th {
+        padding: 10px 4px;
+    }
+
+    tr {
+        border-bottom: 10px solid rgba(0,0,0,0.12);
+    }
+
+    #animazione-meteo {
+        animation-name:cambia-colore;
+        width: 348px;
+        animation-duration:20s;
+        animation-delay:4s;
+        animation-timing-function:ease-in-out;
+        animation-iteration-count:infinite;
+        -webkit-box-direction: revert;
+        padding: 10px 0 0;
+    }
+    iframe {
+        height: 500px;
+    }
+    .modal {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+        padding: 0px;
+        max-height: 70%;
+        width: 50%;
+        margin: auto;
+        overflow-y: auto;
+        border-radius: 2px;
+        will-change: top, opacity;
+    }
+</style>
+<body>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large" href="/">
+        <i class="large material-icons"><i class="glyphicon glyphicon-home"></i></i>
+    </a>
+    <ul>
+        <li class="btn-floating btn-large brown"><a href="#contatto"><i class="fa fa-at" style="font-size:36px" ></i></a></li>
+        <li class="btn-floating btn-large brown"><a href="http://www.anthroposmagazine.com/wp-content/uploads/sites/8/2014/04/bacio-della-morte1.jpg"><i class="fa fa-heartbeat" style="font-size:36px"></i></a></li>
+        <li class="btn-floating btn-large brown"><a href="https://it.wikipedia.org/wiki/Pagina_principale"><i class="fa fa-wikipedia-w" style="font-size:30px"></i></a></li>
+        <li class="btn-floating btn-large brown"><a href="https://sognienumeri.it/wp-content/uploads/2015/10/sognare-la-morte.jpg"><i class="fa fa-smile-o" style="font-size:36px"></i></a></li>
+    </ul>
+</div>
+
+<center>
+    <h1 class="animated infinite pulse"><strong style="font-size: 60px"><u>Benvenuto, se vuoi fatti una partita</u></strong></h1>
+</center>
+<div class="bgimg">
+    <center>
+        <div id="animazione">
+
+            <div class="animated infinite pulse" id="im-bottone2"></div>
+        </div>
+    </center>
+  <div class="middle">
+    <p style="font-family: 'Annie Use Your Telescope',serif; font-size: 30px">Allo scadere del tempo........</p>
+
+      <p id="timer" class="animated infinite pulse fa fa-spinner w3-spin" style="font-size:40px; padding: 10px; font-family: 'Annie Use Your Telescope',serif;"></p><div class="fa fa-spinner w3-spin"></div>
+
+  </div>
+
+</div>
+<center>
+        <button type="button" class="button hinge" data-toggle="modal" data-target=".bs-example-modal-sm"><span id="im-bottone3" class="fa"></span></button>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <h4 style="color: darkblue;font-family: 'Annie Use Your Telescope',serif;">Il mio primo sito...</h4>
+                    <h5 style="color: darkblue;font-family: 'Annie Use Your Telescope',serif;">....se possiamo chiamarlo cosi :)</h5>
+                    <h6 style="color: darkblue;font-family: 'Annie Use Your Telescope',serif;">Creato da me</h6>
+
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="button hinge" data-toggle="modal" data-target="#exampleModalCenter"><span id="im-bottone" class="fa"></span></button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered gif" role="document">
+            </div>
+        </div>
+
+</center>
+
+<div class="container gioco">
+    <div class="w3-container">
+
+
+
+
+
+        <div class="miniclip-game-embed" data-game-name="cut-the-rope-time-travel" data-theme="dark" data-width="100%" data-height="600" data-language="it">
+            <a href="https://www.miniclip.com/games/cut-the-rope-time-travel/"></a>
+        </div>
+        <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+    </div>
+
+    <p></p>
+    <div class="col-xs-9 col-md-5">
+        <center>
+            <h1 style="font-size: 40px"><u>Secondo giochino...</u></h1>
+        </center>
+    </div>
+    <div class="miniclip-game-embed" data-game-name="shootermata" data-theme="5" data-width="100%" data-height="600" data-language="it">
+        <a href="https://www.miniclip.com/games/shootermata/"></a>
+    </div>
+</div>
+
+<footer>
+    <div id="contatto"></div>
+    <button class="buttonload animated infinite pulse" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-spinner fa-spin"></i>Su</button>
+
+
+
+
+
+    <h1 class="text-center"><u><strong style="position: center">Previsioni Meteo</strong></u></h1>
+    <p class="text-center"><em style="font-size: 25px">Ciao, spero che la vita ti sorrida :)</em></p>
+    <center>
+        <i class="material-icons animated infinite pulse" style="font-size:48px;color:red; animation-duration: 1s">call_received</i>
+    </center>
+    <!---meteo--->
+
+
+    <div id="animazione-meteo" style="position:relative; padding: 10px 0 0">
+        <script type="text/javascript" src="https://tools.tititudorancea.com/weather_forecast.js?place=yaren&amp;s=1&amp;days=3&amp;utf8=no&amp;columns=4&amp;lang=it"></script>
+    </div>
+
+
+    <h1 class="text-center"><u><strong style="position: center">Contatti</strong></u></h1>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <p style="font-size: 30px"><u>Recapiti</u></p>
+
+            <p><span class="glyphicon glyphicon-map-marker" style="font-size: 25px"></span><a href="https://it.wikipedia.org/wiki/Nauru" style="font-size: 25px">: Repubblica di Nauru</a></p>
+
+            <p><span class="glyphicon glyphicon-phone" style="font-size: 25px"></span>: +674 ......</p>
+            <p><span class="glyphicon glyphicon-envelope" style="font-size: 25px"></span>: non me la ricordo</p>
+        </div>
+    </div>
+    <div id="googleMap"></div>
+    <h1 class="text-center"><strong><u>Qui è dove vengo in vacanza.......</u></strong> </h1>
+    <h2 class="text-center" style="font-family: 'Annie Use Your Telescope',serif;">...e tu dirai.. ma chi se ne frega :)</h2>
+    <a name="lkr-timelapse-player" data-id="1446823653" data-play="day" href="https://lookr.com/1446823653" target="_blank">Riva del Garda</a><script async type="text/javascript" src="https://api.lookr.com/embed/script/player.js"></script>
+</footer>
+
+
+
+<!------------Mappa----------->
+<script>
+
+    function myMap() {
+        var myCenter = new google.maps.LatLng(-0.5284, 166.9342);
+        var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
+        marker.setMap(map);
+        google.maps.event.addListener(marker,'click',function() {
+            var infowindow = new google.maps.InfoWindow({
+                content:"Abito qui :)"
+            });
+        infowindow.open(map,marker);
+        });
+    }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8CJemNdPN9tWeINltAVTqjcPzcW7g3zQ&callback=myMap"></script>
+
+
+<!CDN jQuery -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+<script>
+    // data fine timer
+    var countDownDate = new Date("December 25, 2018 10:00:00").getTime();
+
+    var countdownfunction = setInterval(function() {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+    function smile() {
+        var a;
+        a = document.getElementById("im-bottone");
+        a.innerHTML = "&#xf118;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf11a;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf118;";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf11a;";
+        }, 3000);
+    }
+    smile();
+    setInterval(smile, 4000);
+
+    function smile3() {
+        var a;
+        a = document.getElementById("im-bottone3");
+        a.innerHTML = "😋";
+        setTimeout(function () {
+            a.innerHTML = "😱";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "😵";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "😉";
+        }, 3000);
+    }
+    smile3();
+    setInterval(smile3, 4000);
+
+    function smile2() {
+        var a;
+        a = document.getElementById("im-bottone2");
+        a.innerHTML = "🙂";
+        setTimeout(function () {
+            a.innerHTML = "😊";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "😋";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "😛";
+        }, 6000);
+        setTimeout(function () {
+            a.innerHTML = "🤓";
+        }, 9000);
+        setTimeout(function () {
+            a.innerHTML = "😎";
+        }, 12000);
+        setTimeout(function () {
+            a.innerHTML = "🤒";
+        }, 15000);
+        setTimeout(function () {
+            a.innerHTML = "😴";
+        }, 18000);
+        setTimeout(function () {
+            a.innerHTML = "🤗";
+        }, 21000);
+        setTimeout(function () {
+            a.innerHTML = "😋";
+        }, 24000);
+        setTimeout(function () {
+            a.innerHTML = "🙄";
+        }, 27000);
+        setTimeout(function () {
+            a.innerHTML = "🤔";
+        }, 30000);
+        setTimeout(function () {
+            a.innerHTML = "🤑";
+        }, 33000);
+    }
+    smile2();
+    setInterval(smile2, 36000);
+</script>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    var elem = document.querySelector('.fixed-action-btn');
+    var instance = M.FloatingActionButton.init(elem, {
+        direction: 'right'
+
+    });
+</script>
+
+
+</body>
+</html>
+
+{% endblock content %}

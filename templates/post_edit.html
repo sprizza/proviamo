@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container2">
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <div class="row">
+            <div class="col-25">
+                <label for="fname" style="font-size: 28px">Titolo</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Srivi il titolo......" style="color: black; font-size: 26px;">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="country" style="font-size: 28px">Posizione</label>
+            </div>
+            <div class="col-75">
+                <select id="country" style="display: table" name="country">
+                    <option value="continente" style="font-size: 28px">Continente</option>
+                    <option value="europa">Europa</option>
+                    <option value="asia">Asia</option>
+                    <option value="africa">Africa</option>
+                    <option value="america">America</option>
+                    <option value="oceania">Oceania</option>
+                    <option value="antartide">Antartide</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="subject" style="font-size: 28px">Scrivi</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Scrivi quello che vuoi......" style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Carica..">
+        </div>
+    </form>
+</div>
+
+{% endblock %}
